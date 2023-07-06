@@ -12,6 +12,7 @@ export default defineConfig({
   build: {
     outDir: 'docs'
   },
+  base: '/1111team/',
   server: {
     host: '0.0.0.0'
   }
