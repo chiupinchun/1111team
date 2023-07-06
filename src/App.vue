@@ -1,14 +1,30 @@
 <script setup lang="ts">
+import Sidebar from '@/components/Sidebar.vue';
+
 </script>
 
 <template>
-  <RouterView />
+  <el-container>
+    <el-aside width="200px">
+      <Sidebar />
+    </el-aside>
+    <RouterView />
+  </el-container>
 </template>
 
 <style lang="less">
-body {
+body,
+ul {
   margin: 0;
   padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .ms-5 {

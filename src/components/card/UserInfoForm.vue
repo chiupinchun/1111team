@@ -49,7 +49,7 @@
 <script lang="ts" setup>
 import { ref, reactive } from 'vue';
 import { ElNotification } from 'element-plus';
-import deepCopy from '../utils/deepCopy';
+import deepCopy from '@/utils/deepCopy';
 import Dog from '@/assets/images/avatars/Dog.png';
 import Fish from '@/assets/images/avatars/Fish.png';
 import Hato from '@/assets/images/avatars/Hato.png';
@@ -64,11 +64,11 @@ const emit = defineEmits(['generate']);
 
 const avatars = reactive([
   {
-    name: '狗',
+    name: '吉娃娃',
     img: Dog
   },
   {
-    name: '魚',
+    name: '雜魚',
     img: Fish,
   },
   {
@@ -92,7 +92,7 @@ const avatars = reactive([
     img: Mole
   },
   {
-    name: '兔子',
+    name: '兔兔',
     img: Rabbit
   }
 ]);

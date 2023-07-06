@@ -1,59 +1,7 @@
 <template>
-  <div class="background">
-    <div class="container">
-      <Transition>
-        <Suspense>
-          <component :is="editMode ? UserInfoForm : UserInfoCard" :data="userData" @generate="generateCard"
-            @back="editMode = true"></component>
-        </Suspense>
-      </Transition>
-    </div>
-  </div>
+  這是首頁
 </template>
 
-<script lang="ts" setup>
-import { ref, reactive } from 'vue';
-import UserInfoForm from '../components/UserInfoForm.vue';
-import UserInfoCard from '../components/UserInfoCard.vue';
+<script lang="ts" setup></script>
 
-const editMode = ref(true);
-const userData = reactive<UserInfo | {}>({});
-
-const generateCard = ($event: UserInfo) => {
-  console.log($event);
-  editMode.value = false;
-  Object.assign(userData, $event);
-};
-</script>
-
-<style lang="less" scoped>
-.background {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  background: url(@/assets/images/bg.jpg);
-
-  .container {
-    padding: 2.5rem;
-    width: 50vw;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: rgb(220, 220, 255);
-  }
-}
-
-.v-enter-active,
-.v-leave-active,
-.v-enter-from,
-.v-leave-to {}
-
-.v-enter-from,
-.v-leave-to {
-  transition: 0.5s;
-  opacity: 0;
-  position: absolute;
-}
-</style>
+<style lang="less" scoped></style>

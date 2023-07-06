@@ -27,7 +27,7 @@
       <el-button @click="emit('back')" type="info">返回</el-button>
     </div>
     <i @click="ElMessage({
-      message: '凱婷生日快樂(^^)/',
+      message: whisper,
       type: 'success',
       icon: StarFilled
     })" v-if="surprise" class="surprise"></i>
@@ -48,6 +48,7 @@ import {
   Legend
 } from 'chart.js';
 import { Radar } from 'vue-chartjs';
+import whisper from '../../assets/ts/whisper';
 import defaultImg from '@/assets/images/question-mark.png';
 
 interface Props {
@@ -97,8 +98,8 @@ ChartJS.register(
 const surprise = ref<any>();
 
 onMounted(() => {
-  surprise.value = (<any>window).s;
-  delete (<any>window).s;
+  surprise.value = (window as any).s;
+  delete (window as any).s;
   document.documentElement.classList.add('dark');
 });
 onBeforeUnmount(() => {

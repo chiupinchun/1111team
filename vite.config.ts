@@ -8,5 +8,11 @@ export default defineConfig({
     alias: {
       '@': '/src/'
     }
+  },
+  build: {
+    outDir: 'docs'
+  },
+  server: {
+    host: '0.0.0.0'
   }
 });
